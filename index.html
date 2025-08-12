@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="css/estilos.css"    
+  <meta charset="UTF-8">
+  <title>Turnero</title>
+</head>
+<body>
+  <h1>Turnero</h1>
+
+  <form id="form-turno">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" required>
+
+    <label for="hora">Hora:</label>
+    <input type="time" id="hora" name="hora" required>
+
+    <button type="submit">Reservar Turno</button>
+  </form>
+
+  <h2>Turnos Reservados</h2>
+  <ul id="lista-turnos">
+    <!-- Acá se mostrarán los turnos -->
+  </ul>
+
+  <script>
+    const formulario = document.getElementById('form-turno');
+    const lista = document.getElementById('lista-turnos');
+
+    formulario.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value;
+      const fecha = document.getElementById('fecha').value;
+      const hora = document.getElementById('hora').value;
+
+      const item = document.createElement('li');
+      item.textContent = nombre +" - " + fecha + " a las " + hora;
+      lista.appendChild(item);
+
+      formulario.reset();
+    });
+  </script>
+</body>
+</html>
