@@ -4,6 +4,10 @@
   <link rel="stylesheet" href="css/estilos.css"    
   <meta charset="UTF-8">
   <title>Turnero</title>
+
+  <style>
+    
+  </style>
 </head>
 <body>
   <h1>Turnero</h1>
@@ -26,23 +30,7 @@
     <!-- Acá se mostrarán los turnos -->
   </ul>
 
-  <script>
-    const formulario = document.getElementById('form-turno');
-    const lista = document.getElementById('lista-turnos');
-
-    formulario.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const nombre = document.getElementById('nombre').value;
-      const fecha = document.getElementById('fecha').value;
-      const hora = document.getElementById('hora').value;
-
-      const item = document.createElement('li');
-      item.textContent = nombre +" - " + fecha + " a las " + hora;
-      lista.appendChild(item);
-
-      formulario.reset();
-    });
-  </script>
+  <script src="js/script.js"></script>
+  
 </body>
 </html>
