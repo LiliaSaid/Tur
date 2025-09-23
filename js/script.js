@@ -14,6 +14,10 @@ const formulario = document.getElementById('form-turno');
     const contenido = document.createElement('span');
     contenido.textContent = nombre + " - " + fecha + " a las " + hora;
 
+     // Contenedor para botones
+    const contenedorBotones = document.createElement('div');
+    contenedorBotones.className = 'acciones';
+
     // Crear botón de editar
     const btnEditar = document.createElement('button');
     btnEditar.className = 'btnEditar';
@@ -36,10 +40,14 @@ const formulario = document.getElementById('form-turno');
       lista.removeChild(item);
     });
 
+    // Agregar botones al contenedor
+    contenedorBotones.appendChild(btnEditar);
+    contenedorBotones.appendChild(btnEliminar);
+
     // Agregar botones y contenido al li
     item.appendChild(contenido);
-    item.appendChild(btnEditar);
-    item.appendChild(btnEliminar);
+    item.appendChild(contenedorBotones);
+    
 
     lista.appendChild(item);
     formulario.reset();
