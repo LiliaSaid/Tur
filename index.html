@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="stylesheet" href="css/estilos.css"    
+  <link rel="stylesheet" href="css/estilos.css">    
   <meta charset="UTF-8">
   <title>Turnero</title>
 
@@ -18,9 +18,12 @@
 
     <label for="fecha">Fecha:</label>
     <input type="date" id="fecha" name="fecha" required>
+    <span id="error-fecha" class="error"></span>
+    <script src="js/validar-fecha.js"></script>
 
     <label for="hora">Hora:</label>
-    <input type="time" id="hora" name="hora" required>
+    <input type="time" id="hora" name="hora" required min="09:00"   max="18:00" >
+    <span id="error-hora" class="error"></span>
 
     <button type="submit">Reservar Turno</button>
   </form>
@@ -30,7 +33,7 @@
     <!-- Acá se mostrarán los turnos -->
   </ul>
 
-  <script src="js/script.js"></script>
+  <script src="js/cargar-turno.js"></script>
   
 </body>
 </html>
